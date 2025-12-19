@@ -46,7 +46,47 @@ body{
   height:680px;
   z-index:10;
 }
+ /* ===== 树顶文字 ===== */
+.tree-msg{
+  position:absolute;
+  top:6px;
+  left:50%;
+  transform:translateX(-50%);
+  max-width:90%;
+  font-family:'Lucida Handwriting', cursive;
+  font-style:italic;
+  font-size:13px;
+  color:#ffc0cb;
+  text-align:center;
+  line-height:1.2em;
+  text-shadow:0 0 6px #add8e6, 0 0 12px #add8e6;
+  pointer-events:none;
+  z-index:35;
+  white-space:pre-wrap;
+}
 
+/* ===== 署名 ===== */
+.tree-sign{
+  position:absolute;
+  bottom:100px;
+  left:50%;
+  transform:translateX(-50%);
+  font-family:'Lucida Handwriting', cursive;
+  font-style:italic;
+  font-size:12px;
+  color:rgba(255,236,139,0.75);
+  text-shadow:0 0 6px rgba(255,80,80,0.45);
+  opacity:.85;
+  pointer-events:none;
+  z-index:25;
+  animation:signBreathe 4s ease-in-out infinite;
+}
+@keyframes signBreathe{
+  0%,100%{opacity:.6}
+  50%{opacity:.95}
+}
+
+  
 /* ================= 伯利恒星 ================= */
 .star-top{
   position:absolute;
@@ -168,9 +208,15 @@ button{
 <body>
 
 <div class="tree" id="tree">
+    <div class="tree-msg">
+This personalized Xmas tree for my beloved Shantel —
+all my best wishes for you
+  </div>
   <div class="star-top" id="star">★</div>
 </div>
-
+  <div class="tree-sign">
+Designed by your Chloe, 18th 12 2025
+  </div>
 <div id="wishText">Merry Christmas</div>
 <div id="geoText"></div>
 
@@ -313,3 +359,4 @@ input.addEventListener('keydown',e=>{
 
 </body>
 </html>
+
